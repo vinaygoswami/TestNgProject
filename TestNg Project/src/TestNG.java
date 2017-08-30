@@ -16,9 +16,9 @@ public class TestNG {
     System.setProperty("webdriver.firefox.marionette","D:\\geckodriver.exe");
 	WebDriver driver = new FirefoxDriver();
 	Thread.sleep(3000);
-	driver.get("https://test.pickapro.ca/register-for-business");
+	driver.get("URL");
 	driver.manage().window().maximize();
-    baseUrl = "https://test.pickapro.ca/";
+    baseUrl = "URL";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
