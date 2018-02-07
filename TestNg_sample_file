@@ -18,7 +18,7 @@ public class testNGcode {
 	public static int j=0;
 	
 	@BeforeTest
-    public static void lunchBrowser(){
+        public static void lunchBrowser(){
     	
     	System.setProperty("webdriver.chrome.driver","D:\\Auto\\Chromedriver\\chromedriver.exe");
     	driver=new ChromeDriver();	
@@ -86,7 +86,7 @@ public class testNGcode {
 	
 	@Test(priority=3)
 	public static void AddCourceDraft(){
-		// Add Course as a Draft
+		// Add testlink1 as a Draft
 		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.id("id1")));
 		driver.findElement(By.id("id1")).click();
 		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.linkText("link1")));
@@ -94,18 +94,18 @@ public class testNGcode {
 		
 				
 		driver.findElement(By.linkText("link11")).click();
-		driver.findElement(By.name("name_de")).sendKeys("Test Course");
-		driver.findElement(By.name("description_de")).sendKeys("Test Course Description");
-		driver.findElement(By.name("course_fee_euro")).sendKeys("123.45");
-		driver.findElement(By.name("name_en")).sendKeys("Test Course English");
-		driver.findElement(By.name("description_en")).sendKeys("Test Course Description");
+		driver.findElement(By.name("name_1")).sendKeys("Test Course");
+		driver.findElement(By.name("description_1")).sendKeys("Test Description");
+		driver.findElement(By.name("course_fee_1")).sendKeys("123.45");
+		driver.findElement(By.name("name_2")).sendKeys("Test English");
+		driver.findElement(By.name("description_2")).sendKeys("Test Description");
 		Thread.sleep(1000);
-		driver.findElement(By.id("course_status")).sendKeys("Draft");
+		driver.findElement(By.id("course_st_1")).sendKeys("Draft");
 		driver.findElement(By.id("course_image")).sendKeys("C:\\Users\\path\\test.jpg");
-	    Thread.sleep(2000);
-	    driver.findElement(By.id("btnSubmit")).click();
+	        Thread.sleep(2000);
+	        driver.findElement(By.id("btnSubmit")).click();
 	    
-	    Assert.assertEquals("Course added successfully",driver.findElement(By.className("alert-title")));
+	        Assert.assertEquals("testlink1 added successfully",driver.findElement(By.className("alert-title")));
 	   
 	    
 		
@@ -124,76 +124,21 @@ public class testNGcode {
 	
 	@Test(priority=5)
 	public static void AddChapter(){
-		// Add Chapter
-		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.id("menu-toggle")));
-		driver.findElement(By.id("menu-toggle")).click();
-		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.linkText("Chapters")));
-		driver.findElement(By.linkText("Chapters")).click();
-		System.out.println("Chapters page loaded successfully");
-               
-		driver.findElement(By.linkText("Add Chapter")).click();
-		Thread.sleep(1000);
-		
-		driver.findElement(By.id("course_id")).sendKeys("Test Course German");
-		driver.findElement(By.name("name_de")).sendKeys("Test Chapter German");
-		driver.findElement(By.name("description_de")).sendKeys("Test Chapter Description");
-		driver.findElement(By.name("name_en")).sendKeys("Test Chapter English");
-		driver.findElement(By.name("description_en")).sendKeys("Test Chapter Description");
-		driver.findElement(By.id("btnSubmit")).click();
-		
-		Assert.assertEquals("Chapter added successfully",driver.findElement(By.className("alert-title")));
-		
+	       System.out.println("Test3");
 	}
 	
 	
 	@Test(priority=6)
 	public static void AddLesson(){
 		
-		// Add Lesson
-        new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.id("menu-toggle")));
-		driver.findElement(By.id("menu-toggle")).click();
-		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.linkText("Lessons / Sub Lessons")));
-		driver.findElement(By.linkText("Lessons / Sub Lessons")).click();
-		System.out.println("Lessons page loaded successfully");
-        
-                
-		driver.findElement(By.linkText("Add Lesson")).click();
-		Thread.sleep(1000);
-		
-		driver.findElement(By.id("course_id")).sendKeys("Test Course German");
-		driver.findElement(By.id("chapter_id")).sendKeys("Test Chapter German");
-		driver.findElement(By.name("name_de")).sendKeys("Test Lesson German");
-		driver.findElement(By.name("name_en")).sendKeys("Test Lesson English");
-		driver.findElement(By.name("description_de")).sendKeys("Test Lesson Description");
-		driver.findElement(By.id("btnSubmit")).click();
-		j = addM(driver,j);
-		Assert.assertEquals("Lesson added successfully",driver.findElement(By.className("alert-title")));
-		
+		System.out.println("Test4");
 	}
 	
 	
 	@Test(priority=7)
 	public static void AddSubLesson(){
 		
-		// Add Sub-Lesson
-        new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.id("menu-toggle")));
-		driver.findElement(By.id("menu-toggle")).click();
-		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.linkText("Lessons / Sub Lessons")));
-		driver.findElement(By.linkText("Lessons / Sub Lessons")).click();
-		System.out.println("Lessons page loaded successfully");
-           
-		driver.findElement(By.linkText("Add Lesson")).click();
-		Thread.sleep(1000);
-		
-		driver.findElement(By.id("course_id")).sendKeys("Test Course German");
-		driver.findElement(By.id("chapter_id")).sendKeys("Test Chapter German");
-		driver.findElement(By.id("lesson_id")).sendKeys("Test Lesson German");
-		driver.findElement(By.name("name_de")).sendKeys("Test Sub-Lesson German");
-		driver.findElement(By.name("name_en")).sendKeys("Test Sub-Lesson English");
-		driver.findElement(By.name("description_de")).sendKeys("Test Sub-Lesson Description");
-		driver.findElement(By.id("btnSubmit")).click();
-		
-		Assert.assertEquals("Lesson added successfully",driver.findElement(By.className("alert-title")));
+               System.out.println("Test5");
 		
 	}
 	
@@ -209,46 +154,30 @@ public class testNGcode {
         
 		driver.findElement(By.linkText("Add Content")).click();
 		Thread.sleep(1000);
-		driver.findElement(By.id("course_id")).sendKeys("Test Course German");
-		driver.findElement(By.id("chapter_id")).sendKeys("Test Chapter German");
-		driver.findElement(By.id("lesson_id")).sendKeys("Test Lesson German");
+		driver.findElement(By.id("id1")).sendKeys("Test id1");
+		driver.findElement(By.id("id2")).sendKeys("Test id2");
+		driver.findElement(By.id("id3")).sendKeys("Test id3");
 		Thread.sleep(250);
-		driver.findElement(By.id("sub_lesson_id")).sendKeys("Test Sub-Lesson German");
+		driver.findElement(By.id("id4")).sendKeys("Test id4");
 						
-		WebElement iframe = driver.findElement(By.className("cke_wysiwyg_frame"));
+		WebElement iframe = driver.findElement(By.className("ccke_wysiwyg_frame"));
 		driver.switchTo().frame(iframe);
 		WebElement description = driver.findElement(By.cssSelector("body"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = 'Test Content German'", description);
+		((JavascriptExecutor) driver).executeScript("arguments[0].innerHTML = 'Test Content'", description);
 		driver.switchTo().defaultContent();
 				
-	    driver.findElement(By.id("content_status")).sendKeys("Draft");
-		driver.findElement(By.id("btnSubmit")).click();
+	        driver.findElement(By.id("status1")).sendKeys("Draft");
+		driver.findElement(By.id("btn1")).click();
 		Thread.sleep(2000);
 		
-		Assert.assertEquals("Content added successfully",driver.findElement(By.className("alert-title")));
+		Assert.assertEquals("Test added successfully",driver.findElement(By.className("alert-title")));
 	
 	}
 	
 	@Test(priority=9)
 	public static void AddFAQ(){
 		 // Add FAQ
-		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.id("menu-toggle")));
-		driver.findElement(By.id("menu-toggle")).click();
-		new WebDriverWait(driver,timeout).until(ExpectedConditions. presenceOfElementLocated(By.linkText("FAQ")));
-		driver.findElement(By.linkText("FAQ")).click();
-		System.out.println("FAQ page loaded successfully");
-			
-		driver.findElement(By.linkText("Add FAQ")).click();
-		Thread.sleep(1000);
-			
-		driver.findElement(By.name("faq_question_de")).sendKeys("Test Faq German Question");
-		driver.findElement(By.name("faq_answer_de")).sendKeys("Test Faq German Answer");
-		driver.findElement(By.name("faq_question_en")).sendKeys("Test Faq English Question");
-		driver.findElement(By.name("faq_answer_en")).sendKeys("Test Faq English Answer");
-			
-		driver.findElement(By.id("btnSubmit")).click();
-		
-		Assert.assertEquals("FAQ added successfully",driver.findElement(By.className("alert-title")));
+		System.out.println("Test6");
 		
 		
 		
